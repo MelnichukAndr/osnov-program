@@ -6,18 +6,14 @@ using namespace std;
 
 int main()
 {
-	unsigned long long a, b,g;
-
-	a = 40;
-	if (a>3)
-	{
-		b = a * 31622400;
-	}
-	else
-	{
-		b = a * 31536000;
-	}
-	g;
+	unsigned long long d;
+	unsigned short b;
+	unsigned int a,c;
+	a = 39;
+	b = a / 4;
+	c = a - b;
+	d = c* 31536000 + b * 31622400;
+	
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
