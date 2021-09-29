@@ -7,12 +7,13 @@ using namespace std;
 
 int main()
 {
-    int a1 = sizeof(int);
-    int a2 = sizeof(short);
-    int a3 = sizeof(long);
-    int a4 = sizeof(char);
-    int a5 = sizeof(float);
-    int a6 = sizeof(double);
+    float a1, a2, a3, a4, a5, a6;
+    a1 = sizeof(int);
+    a2 = sizeof(short);
+    a3 = sizeof(long);
+    a4 = sizeof(char);
+    a5 = sizeof(float);
+    a6 = sizeof(double);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
