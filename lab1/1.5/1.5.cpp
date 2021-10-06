@@ -8,7 +8,8 @@ using namespace std;
 int main()
 {
 	float d, h;
-
+	srand(time(0));
+	int c = rand() % 10 + 1;
 
 
 	/*string a = "the game";
@@ -18,7 +19,7 @@ int main()
 	d = 8;
 	/*string e = "now the computer enters its number";*/
 
-	h = d + 1;
+	h = d + с;
 
 	/*string g = " computer number";*/
 	h;
