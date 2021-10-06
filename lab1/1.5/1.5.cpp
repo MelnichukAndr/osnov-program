@@ -9,7 +9,7 @@ int main()
 {
 	float d, h;
 	srand(time(0));
-	int c = rand() % 10 + 1;
+	int c = rand() % 100 + 1;
 
 
 	/*string a = "the game";
