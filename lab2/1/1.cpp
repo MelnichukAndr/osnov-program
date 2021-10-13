@@ -16,11 +16,11 @@ int main()
 	  */
 
 
-	char name1[11], name2[11], name3[11], 
-		 name4[11], name5[11], name6[11]; 
-	int cnt1, cnt2, cnt3,
-		cnt4, cnt5, cnt6,
-		cnt7, cnt8, cnt9;
+	char name1[11]= OS / 2, name2[11]=windows/NT, name3[11]=SCO/Unix,
+		 name4[11]=DB2, name5[11]=SQLServer, name6[11]=Oracle; 
+	int cnt1=130, cnt2=230, cnt3=110,
+		cnt4=22, cnt5=24, cnt6=48,
+		cnt7=3343, cnt8=2685, cnt9=3745;
 	
 	/* Введение фактических данных*/
 	printf("1. введите:  операционную систему,  субд,  мин.объем внешней памяти (mb),  мин.объем оперативной памяти (mb) >");
