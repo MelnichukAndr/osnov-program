@@ -16,10 +16,10 @@ int main()
 	  */
 
 
-	char name1[11]= OS / 2, name2[11]=windows/NT, name3[11]=SCO/Unix,
-		 name4[11]=DB2, name5[11]=SQLServer, name6[11]=Oracle; 
-	int cnt1=130, cnt2=230, cnt3=110,
-		cnt4=22, cnt5=24, cnt6=48,
+	char name1[11]= "OS / 2", name2[11] = "windows / NT", name3[11] = "SCO / Unix",
+		 name4[11]="DB2", name5[11] = "SQLServer", name6[11] = "Oracle";
+	int cnt1=130, cnt2 = 230, cnt3 = 110,
+		cnt4=22, cnt5 = 24, cnt6 = 48,
 		cnt7=3343, cnt8=2685, cnt9=3745;
 	
 	/* Введение фактических данных*/
