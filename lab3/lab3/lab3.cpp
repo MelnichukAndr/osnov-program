@@ -15,18 +15,19 @@ int main() {
 	double a = 12.5;
 		double t1, t2;  
 	double ax;       
+	while (1) {
+		printf("Введите x, y >");
+		scanf("%lf %lf", &x, &y);
 
-	printf("Введите x, y >");
-	scanf("%lf %lf", &x, &y);
+		ax = pow(a, 2);
+		t1 = 1 / (4 * ax * pow(x, 2)) + 1 / (2 * ax * ax * x) + 1 / (2 * pow(ax, 3)) * log(y * y / x);
 
-	ax = pow(a, 2);
-	t1 = 1 / (4 * ax * pow(x, 2)) + 1 / (2 * ax * ax * x) + 1 / (2 * pow(ax, 3)) * log(y * y / x);
+		ax = a * x;
+		t2 = x / 2 + (1 / (2 * a)) * log(sin(ax * 3.14 / 180) + cos(ax * 3.14 / 180));
 
-	ax = a * x;
-	t2 = x / 2 + (1 / (2 * a)) * log(sin(ax*3.14/180) + cos(ax*3.14/180));
-
-	printf("t1 = %lg\n", t1);
-	printf("t2 = %lg\n", t2);
+		printf("t1 = %lg\n", t1);
+		printf("t2 = %lg\n", t2);
+	}
 	return 0;
 }
 
