@@ -1,30 +1,50 @@
 ﻿// lab5(b).cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#define  _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
+#include <stdio.h>
 #include <conio.h>
-#include "windows.h"
 using namespace std;
+
 int main() {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	int k; 
-	while (true)
-	{
-		system("cls");
-		
-		printf("Введите кол-во грибов k >");
-		scanf("%d", &k);
-		
-		
-		printf("У меня %d",k); printf(" грибов\n");
+    setlocale(LC_ALL, "RUS");
+   
 
-		printf("Для продолжения нажмите любую клавишу");
-		_getch();
-	}
+    int g;
+    while (1) {
+        system("cls");
+        printf("\t***Склонение слова гриб в зависимости от числа***\n");
+        printf("Введите количество грибов ");
+        scanf("%d", &g);
 
-	return 0;
+        if ((g >= 11) &&  (g <= 19))
+            printf("У меня %d грибов", g);
+
+        else 
+            if ((g % 10 >= 2) && (g % 10 <= 4))
+                printf("У меня %d гриба", g);
+
+        else 
+            if (g % 10 == 1)
+                printf("У меня %d гриб", g);
+
+        else 
+            if ((g % 10 >= 5) && (g % 10 <= 9) || (g % 10 == 0))
+                printf("У меня %d грибов", g);
+
+        else
+            printf("Ошибка, введите положительное число!");
+
+
+
+
+        printf("\n\n\n\n\n");
+        printf("Введите любую клавишу для продолжения");
+        _getch();
+    }
+
+    return 0;
 }
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"

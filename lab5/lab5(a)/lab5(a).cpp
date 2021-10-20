@@ -9,33 +9,76 @@ using namespace std;
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	/*double a=3;   
+	double b=-18;     
+	double c=27; */
+
+	/*D = 0*/
+	
+
+
+
+	/*double a = 1;
+	double b = 4;  
+	double c = 3;*/
+
+	/*D > 0*/
+
+
+
+	/*double a = 0;
+	double b = -18; 
+	double c = 27;*/
+
+	/*не квадратное уравнение*/
+
+
+	/*double a = 1;
+	double b = -5;       
+	double c = 7;*/
+
+	/*D < 0*/
+
 	double x;
-	double a;
-	double b;
-	double c;
+	double a=3;   
+	double b=-18; 
+	double c=27;  
+	double D;
 	while (true)
 	{
 		system("cls");
 		
-		printf("Введите координату a >");
+		/*printf("Введите кофициент a >");
 		scanf("%lf", &a);
 		printf("a=%6.3lf\n", a);
-		printf("Введите координату b >");
+		printf("Введите кофициент b >");
 		scanf("%lf", &b);
 		printf("b=%6.3lf\n", b);
-		printf("Введите координату c >");
+		printf("Введите кофициент c >");
 		scanf("%lf", &c);
-		printf("c=%6.3lf\n", c);
-		if ((b * b - 4 * a * c) >= 0) //Если дискриминант больше или равен 0
+		printf("c=%6.3lf\n", c);*/
+		D = b * b - 4 * a * c;
+		if ((D >= 0) /*&& (D = 0)*/ && (a != 0)) 
 		{
-			x = (-1 * b + sqrt(b * b - 4 * a * c)) / (2 * a);
-			printf ("Первый корень равен %6.3lf \n" x );
-			x = (-1 * b - sqrt(b * b - 4 * a * c)) / (2 * a);
-			printf ("Второй корень равен %6.3lf \n"  x );
+			x = (-1 * b + sqrt(D)) / (2 * a);
+			printf("Первый корень равен %6.3lf \n", x);
+			x = (-1 * b - sqrt(D)) / (2 * a);
+			printf("Второй корень равен %6.3lf \n", x);
 		}
 		else
+
 		{
-			printf ( "Дискриминант меньше 0, корни невещественные.\n" );
+			if (a == 0)
+			{
+				printf("не является квадратным уравнением \n");
+				printf("введите коффициент a отличный от 0 \n");
+			}
+			else
+			{
+				printf("нет решений");
+				printf("дискриминант меньше 0 \n");
+				printf("введите другие коффициенты\n");
+			}
 		}
 		
 		_getch();
