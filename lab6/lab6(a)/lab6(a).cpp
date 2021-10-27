@@ -20,7 +20,7 @@ int main()
     while (num2 != num)
     {
         ++j;
-        printf("введите ваше число = \n");
+        printf("введите ваше число = ");
         scanf("%d", &num2);
         if (num > num2)
             printf("число больше вашего\n");
