@@ -17,6 +17,7 @@ int main()
 
     int j = 0;
     int num2 = 0;
+    printf("Отгадайте число от 1 до 100 \n");
     while (num2 != num)
     {
         ++j;
@@ -27,7 +28,7 @@ int main()
         else if (num < num2)
             printf("число меньше вашего\n");
     }
-    printf("вы угадали число за %1d", j); printf("попыток\n");
+    printf("вы угадали число за %1d", j); printf(" попыток\n");
     printf("\n\n\n\n\n");
 
     
