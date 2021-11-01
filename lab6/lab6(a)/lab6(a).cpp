@@ -28,7 +28,7 @@ int main()
         else if (num < num2)
             printf("число меньше вашего\n");
     }
-    printf("вы угадали число за %1d", j); printf(" попыток\n");
+    printf("вы угадали число за "" %d "" попыток\n", j);
     printf("\n\n\n\n\n");
 
     
