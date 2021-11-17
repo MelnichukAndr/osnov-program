@@ -48,7 +48,7 @@ int main() {
 	{
 		system("cls");
 		
-		/*printf("Введите кофициент a >");
+		printf("Введите кофициент a >");
 		scanf("%lf", &a);
 		printf("a=%6.3lf\n", a);
 		printf("Введите кофициент b >");
@@ -56,7 +56,7 @@ int main() {
 		printf("b=%6.3lf\n", b);
 		printf("Введите кофициент c >");
 		scanf("%lf", &c);
-		printf("c=%6.3lf\n", c);*/
+		printf("c=%6.3lf\n", c);
 		D = b * b - 4 * a * c;
 		if ((D >= 0) /*&& (D = 0)*/ && (a != 0)) 
 		{

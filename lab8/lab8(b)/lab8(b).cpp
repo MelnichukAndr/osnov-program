@@ -1,53 +1,46 @@
-﻿// lab7.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// lab8(b).cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-//#define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include "windows.h"
+#include <iomanip>
+#include <windows.h>
+#define _CRT_SECURE_NO_WARNINGS
+using namespace std;
 
+int Ar[20];   
 
-int main() {
+int main(void)
+{
+	setlocale(LC_ALL, "Russian");
 
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	int i, n,a;    
+	
+	cout << "введите массив который необходимо вставить" << endl;
+	cin >> n;
+	
+	int* arr = new int[n];
+	
+	for (int i = 0; i < n; i++)
+		cin >> arr[n];
 
-	short n;        /* параметр внешнего цикла */
-	double x, y;    /* абсцисса и ордината графика */
-	short h;        /* позиция точки на экране */
-	float temp = 0;
-	/* внешний цикл - для 5 периодов */
-	for (n = 0; n < 5; n++) {
-		/* вывод заголовка таблицы */
-		printf("|   x   |      y     |\n");
-		printf("|-------|------------|\n");
-		/* внутренний цикл для одного периода */
-		for (x = 0; x < 4; x += 0.25) {
-			
-			if (x < 1) y = 0;
-			
-			else if (x < 2) y =(x-2)*(x-2)-1;
-			
-			else if (x < 3) y = -1;
+	
+	srand(time(NULL));
 
-			else if (x < 4)  y = (x - 3) * (x - 3) - 1;
+	for (i = 0; i < 10; Ar[i++] = rand() % 20 - 10);
+	
+	cout << "Начальный массив:" << endl;
+	for (i = 0; i < 10;cout << Ar[i++] << " ");
 
-			
-			printf("| %5.2lf | %10.7lf |", x + n * 4, y);
-			
-			h = (y + 1) * 10;			
-			
-			
-			for (; h > 0; h--) printf(" ");
-			printf("*\n");
-		} 
-	 
-		printf("Нажмите клавишу Enter...");
-		getchar();
-	} 
-	return 0;
+	cout << endl << endl << endl;
+		
+	cout << "выберете место расположения вставляемого масива" << endl << endl << endl << endl;
+	cin >> a;
+	
+   
+
+    
+    return 0;
 }
-
-
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
