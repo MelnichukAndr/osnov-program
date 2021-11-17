@@ -15,6 +15,7 @@ int main()
     int c = 0;
     int j = 0;
     int i = 0;
+    int r = 0;
     while (k < 10)
         {
             srand(time(0));
@@ -35,7 +36,8 @@ int main()
                     printf("паравильное решение %3d\n",j);
                 }
         }
-        printf("ваша оценка %d\n\n\n\n\n\n",i);
+    r = 12 / k * i;
+        printf("ваша оценка %d\n\n\n\n\n\n",r);
            
 }
 
