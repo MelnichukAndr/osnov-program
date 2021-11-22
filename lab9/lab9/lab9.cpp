@@ -1,44 +1,43 @@
-﻿// lab6(b).cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// lab9.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <conio.h>
-#include <time.h>
+#include "windows.h"
+#define S 9
 
-using namespace std;
+int Ar[S][S]; /* матрица */
 
-int main()
+int main(void)
 {
-    setlocale(LC_ALL, "Russian");
-    double k = 0.0;
-    int c = 0;
-    int j = 0;
-    int i = 0;
-    int r = 0;
-    while (k < 5)
-        {
-            srand(time(0));
-            int a = rand() % 10;
-            int b = rand() % 10;
-            k = k + 1;
-            printf("решите пример\n");
-            j = a * b;
-            printf("%1d", a); printf(" * "); printf("%1d", b); printf(" = "); scanf("%3d", &c);
-            if (j == c)
-                {
-                    printf("паравильное решение\n");
-                    i = i + 1;
-                }
-            else
-                {
-                    printf("непаравильное решение\n");
-                    printf("паравильное решение %3d\n",j);
-                }
-        }
-    r = 12 / k * i;
-        printf("ваша оценка %d\n\n\n\n\n\n",r);
-           
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	short l, r;  /* текущие индексы */
+	short r1, r2; /* граничные номера столбцов */
+	short dd;    /* модификатор граничных номеров */
+	short k;     /* текущий член ЛП */
+	 /* начальные значения переменных */
+	r1 = 0; r2 = S - 1; dd = 1; k = 1;
+	for (l = 0; l < S; l++) {  /* перебор строк */
+		for (r = 0; r < S; r++)  /* перебор столбцов */
+		  /* условие ненулевого значения */
+			if ((r < r1) || (r > r2)) Ar[l][r] = k++;
+			else    Ar[l][r] = 0;
+		/* конец перебора строк */
+	  /* модификация границ */
+		r1 += dd; r2 -= dd;
+		/* уловие перехода в нижнюю часть */
+		if (r1==4) dd = -dd;
+	} /* конец перебора столбцов */
+  /* вывод матрицы */
+	for (l = 0; l < S; l++) {
+		for (r = 0; r < S; r++) {
+			printf("%3d", Ar[l][r]);
+		}
+		printf("\n");
+	}
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
