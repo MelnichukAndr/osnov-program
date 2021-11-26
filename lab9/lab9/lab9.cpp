@@ -21,16 +21,13 @@ int main(void)
 	r1 = 0; r2 = S - 1; dd = 1; k = 1;
 	for (l = 0; l < S; l++) { 
 		for (r = 0; r < S; r++)  
-		  
-			if ((r < r1) || (r > r2)) Ar[l][r] = k++;
-			else    Ar[l][r] = 0;
-		
-	  /* модификация границ */
-		r1 += dd; r2 -= dd;
-		/* уловие перехода в нижнюю часть */
-		if (r1==4) dd = -dd;
+				if ((r < r1) || (r > r2))
+					Ar[l][r] = k++;
+				else    
+					Ar[l][r] = 0;
+			r1 += dd; r2 -= dd;
+			if (r1==4) dd = -dd;
 	} 
-  /* вывод матрицы */
 	for (l = 0; l < S; l++) {
 		for (r = 0; r < S; r++) {
 			printf("%3d", Ar[l][r]);
