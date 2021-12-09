@@ -46,10 +46,6 @@ int main()
 
 
 
-        /* string s = to_string(k);
-         string s_reverse(s);
-         reverse(s_reverse.begin(), s_reverse.end());*/
-
         for (int i = 0; i < s; i++)
         {
             m += Arr[i] * pow(10, s - 1 - i);
@@ -57,7 +53,7 @@ int main()
 
         cout << "Сумма = " << sum << endl;
         cout << "Количество = " << count_of_digits << endl;
-        /* cout << "Reverse = " << s_reverse << endl;*/
+       
         cout << "Обратное = " << m << endl;
 
         return 0;
