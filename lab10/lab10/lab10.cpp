@@ -26,16 +26,7 @@ int Array(int OM[], int M, int N) {
         cout << endl;
     }
     cout << "Умножаем каждый эл. столбца на эл. гл.дл. своего столбца : " << endl;
-  /*  for (int i = 0; i < M; i++)
-    {
-        temp = DM[i][i];
-        for (int j = 0; j < N; j++)
-        {
-            DM[i][j] *= temp;
-            cout << setw(3) << DM[i][j];
-        }
-        cout << endl;
-    }*/
+ 
 
     for (int i = 0; i < M; i++)
     {
@@ -52,28 +43,7 @@ int Array(int OM[], int M, int N) {
         cout << endl;
     }
 
-   //for (int j = 0; j < N; j++)
-   // {
-   //     temp = DM[j][j];
-   //     for (int i = 0; i < M; i++)
-   //     {
-   //         DM[i][j] *= temp;
-   //      /*   cout << setw(3) << DM[i][j];*/
-   //     }
-   //    
-   //     
-   // }
-    /* for (int i = 0; i < M; i++)
-    {
-        temp = DM[j][j];
-        for (int j = 0; j < N; j++)
-        {
-           
-            DM[i][j] *= temp;
-            cout << setw(3) << DM[i][j];
-        }
-        cout << endl;
-    }*/
+  
   
     for (int i = 0; i < M; i++)
     {
