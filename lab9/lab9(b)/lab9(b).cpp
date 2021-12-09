@@ -47,15 +47,13 @@ int main()
 
 		//печатаем 1 матрицу со случайними значениями
 		for (int i = 0; i < str; i++)
-		{
-
-		/*	if (i % str)*/
-				cout << endl;
+		{			
 			for (int j = 0; j < col; j++)
 			{
 				Mat[i][j] = rand() % 10;
 				cout << setw(w) << Mat[i][j];
 			}
+			cout << endl;
 		}
 
 		cout << endl;
@@ -93,14 +91,12 @@ int main()
 		//печатаем 2 матрицу со случайними значениями
 		for (int k = 0; k < str_2; k++)
 		{
-
-			
-				cout << endl;
 			for (int l = 0; l < col_2; l++)
 			{
 				Mat_2[k][l] = rand() % 10;
 				cout << setw(w) << Mat_2[k][l];
 			}
+			cout << endl;
 		}
 
 		cout << endl;
