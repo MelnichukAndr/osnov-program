@@ -55,14 +55,13 @@ int main(void)
 
 			for (int i = 0; i < str; i++)
 			{
-				if (i % str)
-					cout << endl;
-
 				for (int j = 0; j < col; j++)
 				{
 					Ar[i][j] = rand() % 100;
 					cout << setw(3) << Ar[i][j];
 				}
+				cout << endl;
+
 			}
 
 
@@ -124,15 +123,12 @@ int main(void)
 
 				for (int i = 0; i < str; i++)
 				{
-					if (i % str)
-						cout << endl;
-
 					for (int j = 0; j < col; j++)
 					{
 						Ar[i][j] = rand() % 100;
 						cout << setw(3) << Ar[i][j];
 					}
-					
+					cout << endl;
 				}
 				int min;
 				int c;
