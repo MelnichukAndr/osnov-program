@@ -8,8 +8,10 @@ using namespace std;
 
 int main() {
 
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     int arr_size;
-    cout << "Put the count of elements in array" << endl;
+    cout << "Введите размер масива " << endl;
     cin >> arr_size;
 
     int arr[100]{};
@@ -26,50 +28,59 @@ int main() {
 
     while (true) {
 
-        cout << "\nWhat you wanna do with array?" << endl;
-        cout << "Insert elements(1)" << endl;
-        cout << "Delete elemets(2)" << endl;
-        cout << "Exit(0)" << endl;
+        cout << "\nЧто вы желаете сделать с масивом?" << endl;
+        cout << "Вставить елемент(1)" << endl;
+        cout << "Удалить элемент(2)" << endl;
+        cout << "Выйти(0)" << endl;
 
         cin >> answer;
 
         if (answer == 0) {
 
-            cout << "\nPush any key to exit...." << endl << endl;
+            cout << "\nДля выхода нажмите любую кнопку" << endl << endl;
             break;
         }
 
         int new_arr, new_el, new_size;
-        int answer_add, amount_el_add;
+        int size_arr2;
+        int arr2[100]{};
         int el_add = 0;
         if (answer == 1) {
 
-            cout << "Put the element which you wanna add" << endl;
-            cin >> answer_add;
+            cout << "Введите кол-во элементов которое нужно вставить " << endl;
+            cin >> size_arr2;
 
-            cout << "Put count of elements which you wanna add" << endl;
-            cin >> amount_el_add;
+            for (int k = 0; k < size_arr2; k++)
+            {
+                arr2[k] =rand()%10-5;
 
-            cout << "Put number of element starting from which we will add" << endl;
+                cout << arr2[k] << setw(3);
+            }
+            cout  << endl;
+            cout << "Выберете куда нужно вставить элементы" << endl;
             cin >> el_add;
 
             int new_arr[100];
-            amount_el_add = abs(amount_el_add);
+            
 
             for (int i = 0; i < 100; i++)
             {
                 new_arr[i] = arr[i];
             }
-            arr_size += amount_el_add;
+            arr_size += size_arr2;
 
             el_add--;
-            int end_el = el_add + amount_el_add; //element which you wanna add + count of these elements
+            int end_el = el_add + size_arr2; 
             int j = 0;
-            for (int i = 0; i < 100; i++)
+            int k = 0;
+            for (int i = 0 ; i < 100; i++)
+                
             {
                 if (i >= el_add && i < end_el)
                 {
-                    arr[i] = answer_add;
+                    
+                    arr[i] = arr2[k];
+                    k++;
                 }
                 else
                 {
@@ -81,9 +92,9 @@ int main() {
 
             cout << endl << "Our new Massive" << endl;
 
-            for (int new_i = 0; new_i < arr_size; new_i++)
+            for (int i = 0; i < arr_size;i++)
             {
-                cout << setw(3) << arr[new_i];
+                cout << setw(3) << arr[i];
 
             }
 
@@ -92,27 +103,17 @@ int main() {
 
         int amount_el, el, i;
 
-        if (answer == 2) {
+        if (answer == 2) 
+        {
 
-            cout << "\nPut the count of elements, which you wanna delete\n";
+            cout << "\nВведите сколько нужно удалит элементов\n";
             cin >> amount_el;
-            amount_el = abs(amount_el);
+            
 
-            cout << "Put number of element starting from which we will delete (1 to 10) " << amount_el << " \n";
+            cout << "Введите с какого элемента нужно удалять  " << amount_el << " \n";
             cin >> el;
-            el = abs(el);
-            if (el > 10)
-            {
-                cout << "Eror, these element doesnt exist\n\n";
-            }
-            else
-            {
-                if (amount_el > 10 || amount_el == 0)
-                {
-                    cout << "Put the count of elements which you wanna delete 1 to 10\n\n";
-                }
-                else
-                {
+           
+          
                     el -= 1;
                     for (i = el; i < el + amount_el; i++)
                     {
@@ -126,8 +127,7 @@ int main() {
                         }
                     }
                     cout << "\n\n";
-                }
-            }
+            
         }
     }
 }
