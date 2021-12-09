@@ -89,11 +89,11 @@ int main(void)
 
 			for (int i = 0; i < str; i++)
 			{
-				for (int j = 0; j < col/*-1*/; j++)
+				for (int j = 0; j < col; j++)
 				{
 					cout << setw(3) << Ar[i][j];
 				}
-				/*cout << setw(3) << Ar[i][col - 1] << endl;*/
+				
 				cout << endl;
 			}
 			cout << endl;
@@ -158,11 +158,11 @@ int main(void)
 
 				for (int i = 0; i < str; i++)
 				{
-					for (int j = 0; j < col/*-1*/; j++)
+					for (int j = 0; j < col; j++)
 					{
 						cout << setw(3) << Ar[i][j];
 					}
-					/*cout << setw(3) << Ar[i][col - 1] << endl;*/
+					
 					cout << endl;
 				}
 				cout << endl;

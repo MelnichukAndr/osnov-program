@@ -12,14 +12,8 @@ void array_fill(int arr[100][100], int row, int col)
 	{
 		for (size_t j = 0; j < col; j++)
 		{
-			if (rand() % 2)
-			{
-				arr[i][j] = rand() % 100;
-			}
-			else
-			{
-				arr[i][j] = rand() % 100 * (-1);
-			}
+			arr[i][j] = rand() % 100 - 50;
+			
 		}
 	}
 }

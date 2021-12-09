@@ -94,7 +94,7 @@ int main()
 		for (int k = 0; k < str_2; k++)
 		{
 
-			/*if (k % str_2)*/
+			
 				cout << endl;
 			for (int l = 0; l < col_2; l++)
 			{

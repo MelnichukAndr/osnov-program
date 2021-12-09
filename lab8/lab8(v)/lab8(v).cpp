@@ -4,10 +4,14 @@
 #include <iostream>
 #include <string>
 
+#include <windows.h>
+#include <iomanip>
 using namespace std;
 
 int main()
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     int number;
     int const N = 11;
 
@@ -21,7 +25,7 @@ int main()
     number = count_of_digits = sum = 0;
     int i = 0;
 
-    cout << "Enter number" << endl;
+    cout << "Введите число" << endl;
     cin >> number;
     k = number;
     while (number < 2147483647) {
@@ -31,13 +35,12 @@ int main()
         while (number > 0) {
             Arr[i] = number % 10;
             number /= 10;
-            count_of_digits++;
             i++;
             s++;
         }
 
 
-        for (i = 0; i < count_of_digits; i++) {
+        for ( i = 0; i < s; i++) {
             sum = sum + Arr[i];
         }
 
@@ -52,17 +55,17 @@ int main()
             m += Arr[i] * pow(10, s - 1 - i);
         }
 
-        cout << "Sum = " << sum << endl;
-        cout << "Count of digits = " << count_of_digits << endl;
+        cout << "Сумма = " << sum << endl;
+        cout << "Количество = " << count_of_digits << endl;
         /* cout << "Reverse = " << s_reverse << endl;*/
-        cout << "Reverse = " << m << endl;
+        cout << "Обратное = " << m << endl;
 
         return 0;
     }
 
 
 
-    cout << "Enter number in the range of values for int type" << endl;
+    
 }
 
 
