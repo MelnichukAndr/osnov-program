@@ -9,7 +9,7 @@ using namespace std;
 
 char foo(int first, int second)
 {
-	//char sign;
+	
 	if (first > second)
 	{
 		return '>';
@@ -22,7 +22,7 @@ char foo(int first, int second)
 	{
 		return '=';
 	}
-	//return sign;
+	
 }
 
 int main()
