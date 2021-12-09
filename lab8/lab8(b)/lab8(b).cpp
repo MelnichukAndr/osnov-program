@@ -90,7 +90,7 @@ int main() {
             }
 
 
-            cout << endl << "Our new Massive" << endl;
+            cout << endl << "Новый масив" << endl;
 
             for (int i = 0; i < arr_size;i++)
             {
