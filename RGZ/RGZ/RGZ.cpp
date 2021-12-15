@@ -9,7 +9,7 @@
 
 using namespace std;
 void even_odd_sorting(int arr[], int n);
-void merge_sorting(int arr[], int start, int end);
+void merge_sorting(int arr[], int left, int right);
 void ordered_array(int arr[], int n);
 void reverse_array(int arr[], int n);
 void disordered_array(int arr[], int n);
@@ -185,7 +185,7 @@ int main()
 		auto start = std::chrono::high_resolution_clock::now();
 
 
-		merge_sorting(arr,1, N);									//первая/вторая сортировка     (какой массив в качестве параметра/ N)
+		merge_sorting(arr, 0 , (N-1));									//первая/вторая сортировка     (какой массив в качестве параметра/ N)
 
 		auto end = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> duration = end - start;
@@ -252,7 +252,7 @@ int main()
 		auto start = std::chrono::high_resolution_clock::now();
 
 
-		merge_sorting(reverse_arr, 1 , N);									//первая/вторая сортировка     (какой массив в качестве параметра/ N)
+		merge_sorting(reverse_arr, 0,( N - 1));									//первая/вторая сортировка     (какой массив в качестве параметра/ N)
 
 		auto end = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> duration = end - start;
@@ -323,7 +323,7 @@ int main()
 		auto start = std::chrono::high_resolution_clock::now();
 
 
-		merge_sorting(disordered_arr_2, 1 , N);									//первая/вторая сортировка     (какой массив в качестве параметра/ N)
+		merge_sorting(disordered_arr_2, 0, (N - 1));									//первая/вторая сортировка     (какой массив в качестве параметра/ N)
 
 		auto end = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> duration = end - start;
@@ -401,16 +401,16 @@ void even_odd_sorting(int arr[], int n)
 }
 //Сортировка слиянием
 
-void merge_sorting(int arr[], int start, int end)
+void merge_sorting(int arr[], int left, int right)
 {
-	if (end == start)
+	if (right == left)
 		return;
-	if ((end - start) == 1) {
-		if (arr[end] < arr[start])
+	if ((right - left) == 1) {
+		if (arr[right] < arr[left])
 		{
-			int temp = arr[start];
-			arr[start] = arr[end];
-			arr[end] = temp;
+			int temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
 		}
 		return;
 	}
@@ -419,18 +419,18 @@ void merge_sorting(int arr[], int start, int end)
 
 	
 
-	int mid = (end + start) / 2;
-	merge_sorting(arr, start,mid);
-	merge_sorting(arr,mid+ 1, end);
+	int mid = (right + left) / 2;
+	merge_sorting(arr, left,mid);
+	merge_sorting(arr,mid+ 1, right);
 	
 	int buf[N];
-	int xl = start;
+	int xl = left;
 	int xr = mid + 1;
 	int cur = 0;
-	while ((end - start) + 1 != cur) {
+	while ((right - left) + 1 != cur) {
 		if (xl > mid)
 			buf[cur++] = arr[xr++];
-		else if (xr > end)
+		else if (xr > right)
 			buf[cur++] = arr[xl++];
 		else if (arr[xl] > arr[xr])
 			buf[cur++] = arr[xr++];
@@ -438,7 +438,7 @@ void merge_sorting(int arr[], int start, int end)
 
 	}
 	for (int i = 0; i < cur; i++)
-		arr[i + start] = buf[i];
+		arr[i + left] = buf[i];
 
 	
 
