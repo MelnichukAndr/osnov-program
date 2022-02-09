@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <chrono>
 
-#define N 5
+#define N 45
 
 using namespace std;
 void even_odd_sorting(int arr[], int n);
