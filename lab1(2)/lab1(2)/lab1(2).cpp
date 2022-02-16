@@ -35,10 +35,10 @@ void random(int N, table arr[])
     {
         strcpy_s(arr[i].name, names[rand() % 10].c_str());
         strcpy_s(arr[i].sc, sign[rand() % 10].c_str());
-        arr[i].cnt = (double)(rand()) / RAND_MAX * 50 + 25;
+        arr[i].cnt = (rand()) /  50 + 25;
         
-        arr[i].sq = (double)(rand()) / RAND_MAX * 300 + 150;
-        arr[i].sa = (double)(rand()) / RAND_MAX * 4000 + 2000;
+        arr[i].sq = (rand()) /  300 + 150;
+        arr[i].sa = (rand()) / 4000 + 1000;
     }
 }
 
@@ -96,13 +96,13 @@ void sort(int N, table arr[])
 
 void print_menu()
 {
-    system("cls");  // очищаем экран
+    system("cls");  
     printf("Что мы будем делать?\n");
-    printf("1. Заполнить структуру вручную\n");
-    printf("2. Заполнить структуру рандомно\n");
-    printf("3. Отсортировать структуру\n");
-    printf("4. Расспечатать структуру\n");
-    printf("5. Выход\n");
+    printf("1 Заполнить структуру вручную\n");
+    printf("2 Заполнить структуру рандомно\n");
+    printf("3 Отсортировать структуру\n");
+    printf("4 Расспечатать структуру\n");
+    printf("5 Выход\n");
     printf(">");
 }
 
