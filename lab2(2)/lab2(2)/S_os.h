@@ -1,4 +1,6 @@
 #pragma once
+//#ifdef __S_os_H_
+//#define __S_os_H_
 struct table
 {
     char name[12];

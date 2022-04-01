@@ -1,4 +1,7 @@
 #pragma once
+//#ifdef __OS_H_
+//#define __OS_H_
+
 #include "V_OS.h"
 
 void input(int N, table arr[])

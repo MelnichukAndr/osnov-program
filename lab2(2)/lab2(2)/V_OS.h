@@ -1,5 +1,6 @@
 #pragma once
-
+//#ifdef __V_OS_H_
+//#define __V_OS_H_
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -9,7 +10,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #define PRINT
-#define DEBUG
+//#define DEBUG
 using namespace std;
 
 void input(int N, table[]);
