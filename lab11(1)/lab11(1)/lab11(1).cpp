@@ -1,23 +1,26 @@
 #include <iostream>
 using namespace std;
+#pragma warning(default:4716)
 #define n 10
 
 
 double sredar(int i, int arr[])
 {
+	static int S;
 	static int k;
-	static int sym;
-	static int rez;
-	if (arr[i] >= 0);
+	static int sred;
+	if (i > 0)
+		sredar(i - 1, arr);
+		
+	if ((arr[i] < 0) && (i<n))
 	{
-		sredar(i+1, arr );
-			k++;
+		S += arr[i];
+		k++;
+		sred = S / k;
 	}
-	for (i = 0; i < n; arr[i++]);
-	{
-		sym += arr[i];
-	}
-	rez = sym / (i /*+ 1*/ - k);
+	else if(i == n)
+		cout << sred;
+
 }
 
 
@@ -62,6 +65,8 @@ int main()
 	cout << "Начальный массив" << endl;
 	for (i = 0; i < n; cout << arr[i++] << " ");
 	cout << endl << endl;
-	cout << "Среднее арефметическое " << sredar(i, arr) << endl;
+	cout << "Среднее арефметическое " << endl << endl ;
+	sredar(i, arr);
+	cout << endl << endl << endl;
 	return 0;
 }
