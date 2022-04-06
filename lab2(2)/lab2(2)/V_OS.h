@@ -9,7 +9,7 @@
 #include "S_os.h"
 
 #define _CRT_SECURE_NO_WARNINGS
-#define PRINT
+#define PRINT_1
 //#define DEBUG
 using namespace std;
 

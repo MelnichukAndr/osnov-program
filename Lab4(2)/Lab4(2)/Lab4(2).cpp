@@ -30,13 +30,13 @@ int main()
 		case 2:
 			system("cls");
 			cout << "Отсортированный массив: " << endl;
-			sort(arr1, size);
-			print(arr1, size);
+			sort(arr1, arr2, size);
+			
 			break;
 		case 3:
 			system("cls");
 			if (nsize < 1) { cout << "Нет положительных элементов "; break; }
-			second_Array(arr1, arr2, size);
+			sort(arr1, arr2, size);
 			cout << "Второй массив: " << endl;
 			print(arr2, nsize);
 		case 4:
