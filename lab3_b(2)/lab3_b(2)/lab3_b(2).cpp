@@ -1,6 +1,6 @@
 #include "windows.h"
 #include <iostream>
-#include "Head_b.h"
+#include "Header.h"
 using namespace std;
 int main()
 {

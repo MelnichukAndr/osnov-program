@@ -12,3 +12,4 @@ void getelement_C(int*, int*, int);
 void getelement_D(int*, int*, int);
 void EditArray(int*, int*, int, int*);
 //#endif
+

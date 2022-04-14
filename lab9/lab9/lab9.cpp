@@ -4,7 +4,8 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "windows.h"
-#define S 9
+#define S 6
+
 
 int Ar[S][S]; /* матрица */
 
