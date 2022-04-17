@@ -97,9 +97,9 @@ int main()
 			cout << endl << "”казатель на указатель" << endl;
 			sum = 0, count = 0;
 			int** pp;
-			pp = start_arr;
-			for (int i = 0; i < size; i++, pp++)
+			for (int i = 0; i < size; i++, start_arr++)
 			{	
+				pp = &start_arr;
 				if (**pp < 0)
 					sum += **pp, count++;
 				
