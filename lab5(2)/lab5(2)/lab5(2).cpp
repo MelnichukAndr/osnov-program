@@ -13,30 +13,18 @@ int main(void)
 #ifdef ARRAY
     cout << "Введите размерность массива > ";
     cin >> size;
-    if (size <= 0 || size > 10)
-    {
-        cout << "Введите значение от 1 до 10";
-    }
+   
 
     int* arr = new int[size * size];
 
     fill_arr(arr, size);
-    cout << "Изначальный одномерный массив\n";
+    cout << "одномерный массив\n";
     print_arr(arr, size);
     cout << "\n";
 
-    cout << "\n";
-    cout << "Массив по заднию\n";
-    sort_arr(arr, size);
-    print_arr(arr, size);
-    cout << "\n\n";
 
 
-    cout << "\n\n";
-
-
-
-    delete[]arr, arr = nullptr;
+    delete[]arr;
 
 #else
     int size2;
@@ -45,21 +33,16 @@ int main(void)
     cout << "Введите количество  > ";
     cin >> size2;
 
-    int** matrix = nullptr;
+    int** m ;
 
-    alloc_mat(matrix, size2);
+    alloc_mat(m, size2);
 
-    fill_mat(matrix, size2);
-    cout << "Изначальная матрица\n";
-    print_mat(matrix, size2);
+    fill_mat(m, size2);
+    cout << "матрица\n";
+    print_mat(m, size2);
 
-    buble2_sort(matrix, size2);
-    cout << "\n\n";
 
-    cout << "Матрица по заднию\n";
-    sort_mat(matrix, size2);
-
-    release_mat(matrix, size2);
+    release_mat(m, size2);
 #endif
 
 }
