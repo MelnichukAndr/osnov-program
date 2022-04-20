@@ -4,7 +4,8 @@
 #define  _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "windows.h"
-#define S 6
+#define S 8
+
 
 
 int Ar[S][S]; /* матрица */
@@ -18,7 +19,7 @@ int main(void)
 	short r1, r2; /* граничные номера столбцов */
 	short dd;    /* модификатор граничных номеров */
 	short k;     /* текущий член ЛП */
-	 
+	short z=0;
 	r1 = 0; r2 = S - 1; dd = 1; k = 1;
 	for (l = 0; l < S; l++) { 
 		for (r = 0; r < S; r++)  
@@ -26,8 +27,20 @@ int main(void)
 					Ar[l][r] = k++;
 				else    
 					Ar[l][r] = 0;
-			r1 += dd; r2 -= dd;
-			if (r1==4) dd = -dd;
+		if ((z == 0) || (z==3))
+		{
+			r1 += dd;
+			r2 -= dd;
+		}
+		if (r1 + 1 == r2)
+			z++;
+		if (z == 2)
+		{
+			z++;
+			dd = -dd;
+		}
+
+		if (r1==r2) dd = -dd;
 	} 
 	for (l = 0; l < S; l++) {
 		for (r = 0; r < S; r++) {

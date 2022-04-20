@@ -23,12 +23,12 @@ int main(void)
     fill_arr(arr, size);
     cout << "Изначальный одномерный массив\n";
     print_arr(arr, size);
-    buble_sort(arr, size);
     cout << "\n";
 
     cout << "\n";
     cout << "Массив по заднию\n";
     sort_arr(arr, size);
+    print_arr(arr, size);
     cout << "\n\n";
 
 

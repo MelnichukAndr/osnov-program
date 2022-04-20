@@ -8,7 +8,7 @@ using namespace std;
 
 void fill_arr(int* a, int size);
 void print_arr(int* a, int size);
-void buble_sort(int* a, int s);
+
 void sort_arr(int*, int);
 
 void alloc_mat(int**& m, int size);

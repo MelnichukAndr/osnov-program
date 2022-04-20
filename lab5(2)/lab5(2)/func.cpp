@@ -1,85 +1,92 @@
 ﻿#include "Head.h"
 
 
-//void fill_arr(int* arr, int size)
-//{
-//
-//    for (int i = 0; i < size; i++)
-//    {
-//        for (int j = 0; j < size; j++)
-//        {
-//            *(arr + i * size + j) = rand() % 10;
-//        }
-//    }
-//}
-//
-//void print_arr(int* arr, int size)
-//{
-//
-//    for (int i = 0; i < size; i++)
-//    {
-//        for (int j = 0; j < size; j++)
-//        {
-//            cout << "     " << *(arr + i * size + j);
-//        }
-//        cout << endl;
-//    }
-//}
-//
-//void buble_sort(int* arr, int s)
-//{
-//
-//    for (int a = 0; a < s; a++)
-//    {
-//        for (int b = 0; b < s; b++)
-//        {
-//            for (int i = 0; i < s; i++)
-//            {
-//                for (int j = 0; j < s; j++)
-//                {
-//                    if (*(arr + a * s + b) < *(arr + i * s + j))
-//                        swap(*(arr + a * s + b), *(arr + i * s + j));
-//                }
-//            }
-//        }
-//    }
-//}
-void sort_arr(int* arr, int size)
+void fill_arr(int* arr, int size)
 {
-    int i, j, k, edge, num = (size * size) - 1;
-    int* arr2 = new int[size * size];
+
+    short j1=0, j2=size-1;
+    short dd=1;
+    int z = 0;
+
 
     for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            *(arr2 + i * size + j) = *(arr + i * size + j);
-        }
-    }
-
-
-    short j1, j2; 
-    short dd;   
-    short k;     
-
-    j1 = 0; j2 = size - 1; dd = 1; k = 1;
-
-    for (i = 0; i < size; i++) {
-        for (j = 0; j < size; j++)
-            if ((j < j1) || (j > j2))
-                *(arr + i * size + j) = k++;
+        for (int j = 0; j < size; j++)
+           if ((j < j1) || (j > j2))
+                *(arr + i * size + j) = rand() % 100;
             else
                 *(arr + i * size + j) = 0;
-        j1 += dd; j2 -= dd;
-        if (j1 == 4) dd = -dd;
-    }
-    cout << "Массив по заднию\n";
-    for (i = 0; i < size; i++) {
-        for (j = 0; j < size; j++) {
-            printf("%6d", *(arr + i * size + j));
+        
+        
+        if ((z == 0) || (z == 3))
+        {
+            j1 += dd;
+            j2 -= dd;
         }
-        printf("\n");
+        if (j1 + 1 == j2)
+            z++;
+        if (z == 2)
+        {
+            z++;
+            dd = -dd;
+        }
+
+        if (j1 == j2) dd = -dd;
     }
+}
+
+void print_arr(int* arr, int size)
+{
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            cout << setw(4) << *(arr + i * size + j);
+        }
+        cout << endl;
+    }
+}
 
 
+void sort_arr(int* arr, int size)
+{
+    short j1 = 0, j2 = size - 1;
+    short dd = 1;
+    int z = 0;
+   
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+
+                    if ((j < j1) || (j > j2))
+                    {
+                        if ((*(arr + i * size + j) != 0) && (*(arr + i+1 * size + j+1)!=0))
+                           if (*(arr + i+1 * size + j+1) < *(arr + i * size + j))
+                            swap(*(arr + i + 1 * size + j+1), *(arr + i * size + j));
+
+                    }
+                    else
+
+                        *(arr + i * size + j) = 0;
+
+                if ((z == 0) || (z == 3))
+                {
+                    j1 += dd;
+                    j2 -= dd;
+                }
+                if (j1 + 1 == j2)
+                    z++;
+                if (z == 2)
+                {
+                    z++;
+                    dd = -dd;
+                }
+
+                if (j1 == j2)
+                    dd = -dd;
+
+            }
+ 
 }
 
 void alloc_mat(int**& m, int size)
