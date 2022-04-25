@@ -1,6 +1,6 @@
 #include "Head.h"
 
-#define ARRAY
+//#define ARRAY
 
 int main(void)
 {
