@@ -1,6 +1,5 @@
 #include <windows.h>
 #include <iostream>
-#include <iomanip>
 #include "Header5_2(a).h"
 using namespace std;
 int main()
@@ -8,7 +7,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     srand(time(0));
-    system("color B");
+    //system("color B");
     int size, sum = 0, mult = 1, s = 2, a;
     cout << "¬ведите размер N * N(до 5-ти)-> ";
     cin >> size;
