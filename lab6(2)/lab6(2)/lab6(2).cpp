@@ -15,15 +15,15 @@ int main()
         system("cls");
         cout << "Введите первую строку: ";
         gets_s(str1);
-        if (strlen(str1) < 2) {
-            cout << "Строка должна состоять, хотя бы из двух символа" << endl;
+        if (strl(str1) < 2) {
+            cout << "Строка должна состоять, хотя бы из двух символов" << endl;
             system("pause");
             continue;
         }
         cout << "Введите вторую строку: ";
         gets_s(str2);
-        if (strlen(str2) < 2) {
-            cout << "Строка должна состоять, хотя бы из двух символа" << endl;
+        if (strl(str2) < 2) {
+            cout << "Строка должна состоять, хотя бы из двух символов" << endl;
             system("pause");
             continue;
         }
