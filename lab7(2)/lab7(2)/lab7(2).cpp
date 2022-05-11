@@ -1,58 +1,30 @@
+
+#include "Windows.h"
+#include <iostream>
+#include "strukts.h"
 #include "S.h"
-
-
-
-
-
-void print_menu()
+int main()
 {
-    system("cls");
-    printf("Что мы будем делать?\n");
-    printf("1 - Ввод с экрана \n   ");
-    printf("2 - Ввод случайным образом\n");
-    printf("3 - Вывести запись\n");
-    printf("4 - Вывести полный список\n");
-    printf("5 - Стереть данные\n");
-    printf("6 - Выйти\n");
-    printf(">");
-}
-
-int get_variant() {
-    int variant;
-    cin >> variant;
-    if (variant < 1 || variant > 6)
-    {
-        cout << "Ошибка, введите числа в диапозоне 1-4" << endl;
-        return 0;
-    }
-    else
-        return variant;
-}
-void menu()
-{
-    int N;
-    int variant;
-	short f; 
-    do
-    {
-        print_menu();
-        variant = get_variant();
-		switch (variant)
-		{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	srand(time(0));
+	int a;
+	char fname[] = "OS.txt";
+	short f;
+	while (true) {
+		cout << " 1 - Ввод с экрана \n 2 - Ввод случайным образом\n 3 - Вывести запись\n 4 - Вывести полный список\n 5 - Стереть данные\n 0 - Выйти\n";
+		cout << "-> ";
+		cin >> a;
+		switch (a) {
 		case 1:
-		{
-
-			while (true)
-			{
+			while (true) {
 				system("cls");
 				cout << " 1 - Добавить запись в начало файла\n 2 - Добавить в конец файла\n 3 - В меню\n -->";
 				cin >> f;
-				if (f != 3)
-				{
+				if (f != 3) {
 					InputFirmByHand(fname, f);
 				}
-				else
-				{
+				else {
 					system("cls");
 					break;
 				}
@@ -100,20 +72,5 @@ void menu()
 			cout << "Ошибка" << endl;
 			break;
 		}
-
-		}
-
 	}
-}
-
-int main()
-{
-
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-	char fname[] = "Firms.txt";
-
-    menu();
-
-    return 0;
 }

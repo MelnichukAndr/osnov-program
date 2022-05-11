@@ -1,9 +1,11 @@
 #pragma once
-struct table
+using namespace std;
+
+struct OS
 {
-    char name[12];
-    char sc[12];
-    int cnt;
-    int sq;
-    int sa;
+    char Os[12];
+    char sybd[12];
+    int vint;
+    int ozy;
+    int dolor;
 };
