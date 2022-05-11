@@ -10,7 +10,7 @@ int main()
     int size, a;
     cout << "Введите размер N (до 20-ти) -->";
     cin >> size;
-    if (size < 1 || size>20) cout << "ERROR 404", exit(0);
+    if (size < 1 || size>20) cout << "Ошибка", exit(0);
     int* arr = new int[size];
     while (true) {
         cout << "\n1 - Пузырек\n2 - Пирамида\n3 - Выборка\n0 - Выход\n --> ";
@@ -30,7 +30,7 @@ int main()
             print(arr, size);
             cout << endl;
             ChoseSort(arr, size, HeapSort);
-            PrintArray(arr, size);
+            print(arr, size);
             break;
         case 3:
             system("cls");

@@ -7,7 +7,6 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     srand(time(0));
-    //system("color B");
     int size, sum = 0, mult = 1, s = 2, a;
     cout << "Введите размер N * N(до 5-ти)-> ";
     cin >> size;
@@ -25,7 +24,7 @@ int main()
     PrintArray_two(arr, size);
     s_arr = Func(arr, size, minarr, maxarr, &sum, &mult);
     while (true) {
-        cout << "\n\n1 - Вывести minarr\n2 - Вывести maxarr\n3 - Вывести функцию по заданию\n0 - Выход\n--> ";
+        cout << "\n\n1 - Вывести minarr\n2 - Вывести maxarr\n3 - Вывести функцию по заданию\n4 - Выход\n--> ";
         cin >> a;
         switch (a) {
         case 1:
@@ -49,7 +48,7 @@ int main()
             cout << "Sum =  " << *s_arr << endl;
             cout << "Mult = " << *(s_arr + 1) << endl;
             break;
-        case 0:
+        case 4:
             exit(0);
         default:
             system("cls");
