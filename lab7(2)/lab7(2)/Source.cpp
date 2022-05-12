@@ -15,9 +15,9 @@ void HandEndList(FILE* f) {
 		cout << n + 1 << ") " << "Введите: операционную систему, СУБД, мин.объем внешней памяти, мин.объем оперативной памяти, приблизительную цену " << endl;
 		cin >> os.Os;
 		if (strcmp(os.Os, "stop") == 0) break;
-		fprintf(f, "\n%-20s    %11s  ", os.Os, os.sybd);
-		cin >> os.vint >> os.ozy >> os.dolor;
-		fprintf(f, "%28d    %32d    %24d    ", os.vint, os.ozy, os.dolor);
+		fprintf(f, "\n%-20s   ", os.Os);
+		cin >> os.sybd >> os.vint >> os.ozy >> os.dolor;
+		fprintf(f, " %11s  %28d    %32d    %24d    ", os.sybd, os.vint, os.ozy, os.dolor);
 		
 	}
 }
@@ -154,7 +154,7 @@ void PrintFirm(char* fname) {
 	printf("|---------------------------------------------------------------------------------------------------------------------------------|\n");
 	printf("| Примечание: принималась цена лицензии на 8 пользователей                                                                        |\n");
 	printf("-----------------------------------------------------------------------------------------------------------------------------------\n");
-	fclose(f);
+	if (f != NULL)fclose(f);
 }
 void PrintOneFirm(char* fname) {
 	OS os{};
