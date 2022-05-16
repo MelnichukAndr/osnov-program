@@ -7,37 +7,28 @@
 using namespace std;
 
 
-OS* create_list_by_hand()
+void create_list_by_hand()
 {
 	OS* ptr, * head, * previous;
 
-	head = previous = ptr = new OS;
-	int N = 0;
-
+	previous = nullptr;
+	do {
+		ptr = new OS;
 	cout << "Введите: операционную систему, СУБД, мин.объем внешней памяти, мин.объем оперативной памяти, приблизительную цену \n";
 	cin >> ptr->Os >> ptr->sybd >> ptr->vint >> ptr->ozy >> ptr->dolor;
 
-	char c = 'y';
 
-	while (N < 20 && c == 'y')
-	{
-		ptr = new OS;
+	ptr->prev = previous;
+	if (previous != nullptr)
+		previous->next = ptr;
+	else
+		head = ptr;
+	previous = ptr;
+	
+} while (_getch() != 27);
 
-		if (head == nullptr)
-			head = ptr; // если нет элементов в списке, то первый элемент становится первым
-		else
-			previous->next = ptr; // предыдущий указывает на текущий
-
-		previous = ptr; // предыдущий становится текущим
-
-		cin >> ptr->Os >> ptr->sybd >> ptr->vint >> ptr->ozy >> ptr->dolor;
-
-		cout << "Fill the next one?(y/other key)\n";
-		c = _getch();
-		++N;
-	}
-	previous->next = nullptr; //конец списка
-	return head;
+tail = ptr;
+tail->next = nullptr;
 }
 
 

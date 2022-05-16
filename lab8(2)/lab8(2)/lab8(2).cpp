@@ -47,7 +47,7 @@ int main() {
 					system("cls");
 					break;
 				}
-				cout << "¬ведите название материала: ";
+				cout << "¬ведите название OS: ";
 				char Os[20];
 				cin >> Os;
 				search_by_Os(head, Os);
@@ -63,7 +63,7 @@ int main() {
 					system("cls");
 					break;
 				}
-				cout << "¬ведите тип материала: ";
+				cout << "¬ведите SYBD: ";
 				char sybd[20];
 				cin >> sybd;
 				search_by_sybd(head, sybd);
@@ -79,7 +79,7 @@ int main() {
 					system("cls");
 					break;
 				}
-				cout << "¬ведите количество материала: ";
+				cout << "¬ведите мин.объем внешней пам€ти: ";
 				int vint;
 				cin >> vint;
 				search_by_vint(head, vint);
@@ -95,7 +95,7 @@ int main() {
 					system("cls");
 					break;
 				}
-				cout << "¬ведите процент наценки: ";
+				cout << "¬ведите мин.объем оперативной пам€ти: ";
 				int ozy;
 				cin >> ozy;
 				search_by_ozy(head, ozy);
@@ -104,6 +104,22 @@ int main() {
 				system("cls");
 				break;
 			}
+		case 5:
+			if (head == NULL) {
+				printf("%s\n", "list is null");
+				system("pause");
+				system("cls");
+				break;
+			}
+			cout << "¬ведите приблизительную цену: ";
+			int dolar;
+			cin >> dolar;
+			search_by_ozy(head, dolar);
+			cout << "\n";
+			system("pause");
+			system("cls");
+			break;
+		}
 			break;
 		case 5:
 			system("cls");
