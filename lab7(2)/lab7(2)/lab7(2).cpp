@@ -9,7 +9,7 @@ int main()
 	SetConsoleOutputCP(1251);
 	srand(time(0));
 	int a;
-	char fname[] = "OS.txt";
+	char fname[] = "Os.txt";
 	short f;
 	while (true) {
 		cout << " 1 - Ввод с экрана \n 2 - Ввод случайным образом\n 3 - Вывести запись\n 4 - Вывести полный список\n 5 - Стереть данные\n 0 - Выйти\n";

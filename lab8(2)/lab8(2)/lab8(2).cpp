@@ -6,7 +6,7 @@
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	char fname[] = "OS.txt";
+	
 	OS* head = nullptr;
 	while (1) {
 		int a;
