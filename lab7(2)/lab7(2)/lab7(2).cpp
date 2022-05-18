@@ -22,7 +22,7 @@ int main()
 				cout << " 1 - Добавить запись в начало файла\n 2 - Добавить в конец файла\n 3 - В меню\n -->";
 				cin >> f;
 				if (f != 3) {
-					InputFirmByHand(fname, f);
+					InputOSByHand(fname, f);
 				}
 				else {
 					system("cls");
@@ -33,13 +33,13 @@ int main()
 		case 3:
 			system("cls");
 			f = 2;
-			PrintOneFirm(fname);
+			PrintOneOS(fname);
 			cout << endl << endl;
 			break;
 		case 4:
 			system("cls");
 			f = 1;
-			PrintFirm(fname);
+			PrintOS(fname);
 			cout << endl << endl;
 			break;
 		case 2:
@@ -49,7 +49,7 @@ int main()
 				cout << " 1 - Добавить запись в начало файла\n 2 - Добавить в конец файла\n 3 - В меню\n -->";
 				cin >> f;
 				if (f != 3) {
-					InputFirmRandom(fname, f);
+					InputOSRandom(fname, f);
 					cout << endl << "Запись успешно добавлена" << endl;
 					system("pause");
 				}

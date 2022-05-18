@@ -99,7 +99,7 @@ void RandomStartList(FILE* f, char* fname) {
 	remove(fname);
 	rename("Temp.txt", fname);
 }
-void InputFirmByHand(char* fname, short fb) {
+void InputOSByHand(char* fname, short fb) {
 	FILE* f;
 	fopen_s(&f, fname, "r+t");
 	if (!f) {
@@ -116,7 +116,7 @@ void InputFirmByHand(char* fname, short fb) {
 	}
 	fclose(f);
 }
-void InputFirmRandom(char* fname, short fb) {
+void InputOSRandom(char* fname, short fb) {
 	OS os;
 	OS  temp;
 	FILE* f;
@@ -136,7 +136,7 @@ void InputFirmRandom(char* fname, short fb) {
 	}
 	fclose(f);
 }
-void PrintFirm(char* fname) {
+void PrintOS(char* fname) {
 	OS os;
 	FILE* f;
 	short n = 0;
@@ -156,7 +156,7 @@ void PrintFirm(char* fname) {
 	printf("-----------------------------------------------------------------------------------------------------------------------------------\n");
 	if (f != NULL)fclose(f);
 }
-void PrintOneFirm(char* fname) {
+void PrintOneOS(char* fname) {
 	OS os{};
 	FILE* f;
 	

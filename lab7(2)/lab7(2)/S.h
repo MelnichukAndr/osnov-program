@@ -1,9 +1,9 @@
 #pragma once
 #include "strukts.h"
 
-void InputFirmByHand(char* fname, short fb);
-void InputFirmRandom(char* fname, short fb);
-void PrintFirm(char* fname);
-void PrintOneFirm(char* fname);
+void InputOSByHand(char* fname, short fb);
+void InputOSRandom(char* fname, short fb);
+void PrintOS(char* fname);
+void PrintOneOS(char* fname);
 void ClearData(char* fname);
 
