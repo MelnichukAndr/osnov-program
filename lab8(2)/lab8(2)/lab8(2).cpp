@@ -39,7 +39,8 @@ int main() {
 			cout << "Выбор по критерию\n 1 - название OS\n 2 - его SYBD\n 3 - мин.объем внешней памяти\n 4 - мин.объем оперативной памяти\n 5- приблизительную цену\n> ";
 			int b;
 			cin >> b;
-			switch (b) {
+			switch (b)
+			{
 			case 1:
 				if (head == NULL) {
 					printf("%s\n", "list is null");
@@ -103,23 +104,23 @@ int main() {
 				system("pause");
 				system("cls");
 				break;
-			}
-		case 5:
-			if (head == NULL) {
-				printf("%s\n", "list is null");
+
+			case 5:
+				if (head == NULL) {
+					printf("%s\n", "list is null");
+					system("pause");
+					system("cls");
+					break;
+				}
+				cout << "Введите приблизительную цену: ";
+				int dolar;
+				cin >> dolar;
+				search_by_ozy(head, dolar);
+				cout << "\n";
 				system("pause");
 				system("cls");
 				break;
 			}
-			cout << "Введите приблизительную цену: ";
-			int dolar;
-			cin >> dolar;
-			search_by_ozy(head, dolar);
-			cout << "\n";
-			system("pause");
-			system("cls");
-			break;
-		}
 			break;
 		case 5:
 			system("cls");

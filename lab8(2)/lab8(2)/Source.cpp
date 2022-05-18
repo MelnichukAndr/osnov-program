@@ -7,28 +7,40 @@
 using namespace std;
 
 
-void create_list_by_hand()
+
+OS* create_list_by_hand()
 {
 	OS* ptr, * head, * previous;
 
-	previous = nullptr;
-	do {
-		ptr = new OS;
+	head = previous = ptr = new OS;
+	int N = 0;
+
 	cout << "¬ведите: операционную систему, —”Ѕƒ, мин.объем внешней пам€ти, мин.объем оперативной пам€ти, приблизительную цену \n";
 	cin >> ptr->Os >> ptr->sybd >> ptr->vint >> ptr->ozy >> ptr->dolor;
 
 
-	ptr->prev = previous;
-	if (previous != nullptr)
-		previous->next = ptr;
-	else
-		head = ptr;
-	previous = ptr;
-	
-} while (_getch() != 27);
+	char c = 'y';
 
-tail = ptr;
-tail->next = nullptr;
+	while (N < 20 && c == 'y')
+	{
+		ptr = new OS;
+
+		if (head == nullptr)
+			head = ptr; // если нет элементов в списке, то первый элемент становитс€ первым
+		else
+			previous->next = ptr; // предыдущий указывает на текущий
+
+		previous = ptr; // предыдущий становитс€ текущим
+
+		cin >> ptr->Os >> ptr->sybd >> ptr->vint >> ptr->ozy >> ptr->dolor;
+
+		cout << "Fill the next one?(y/other key)\n";
+		c = _getch();
+		++N;
+	}
+
+	previous->next = nullptr; //конец списка
+	return head;
 }
 
 
@@ -163,7 +175,7 @@ void add_to_end(OS* head) {
 		ptr = ptr->next;
 	}
 	ptr = new OS;
-	cout << "\n¬ведите материал и хар-ки:\n";
+	cout << "\n¬ведите название OS и его характеристики:\n";
 	cin >> ptr->Os >> ptr->sybd >> ptr->vint >> ptr->ozy >> ptr->dolor;
 	previous->next = ptr; // предыдущий указывает на текущий
 	ptr->next = nullptr; // конец списка
@@ -174,7 +186,7 @@ void add_after_element(OS* head)
 	OS* ptr = head;
 	OS* previous = head;
 	char name[12];
-	cout << "\n¬ведите название материала: ";
+	cout << "\n¬ведите название OS и его характеристики: ";
 	cin >> name;
 	while (ptr)
 	{
@@ -183,7 +195,7 @@ void add_after_element(OS* head)
 			ptr = new OS;
 			ptr->next = previous->next; // предыдущий указывает на текущий
 			previous->next = ptr; // предыдущий становитс€ текущим
-			cout << "\n¬ведите материал и хар-ки:\n";
+			cout << "\n¬ведите название OS и его характеристики:\n";
 			cin >> ptr->Os >> ptr->sybd >> ptr->vint >> ptr->ozy >> ptr->dolor;
 			break;
 		}
