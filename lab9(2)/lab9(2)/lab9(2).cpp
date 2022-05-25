@@ -27,7 +27,7 @@ int main()
 			break;
 
 		case 3:
-			system("cls");
+			
 			if (head == NULL) {
 				printf("%s\n", "list is null");
 				system("pause");

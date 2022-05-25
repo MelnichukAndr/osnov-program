@@ -338,7 +338,7 @@ void input_in_file() {
 	OS* ptr = head;
 
 	FILE* f;
-	char fname[] = "OS.txt";
+	char fname[] = "OZ.txt";
 	fopen_s(&f, fname, "wt");
 
 	while (ptr)
@@ -350,11 +350,11 @@ void input_in_file() {
 }
 
 void read_from_file() {
-	OS* ptr, * head, * previous;
+	OS* ptr,/* * head,*/ * previous;
 	ptr = head = previous = new OS;
 	head->prev = nullptr;
 	FILE* f;
-	char fname[] = "OS.txt";
+	char fname[] = "OZ.txt";
 	fopen_s(&f, fname, "rt");
 
 	fscanf(f, " %s %s %d %d %d", &ptr->Os, &ptr->sybd, &ptr->vint, &ptr->ozy, &ptr->dolor);
@@ -362,9 +362,11 @@ void read_from_file() {
 		ptr = new OS;
 		fscanf(f, " %s %s %d %d %d", &ptr->Os, &ptr->sybd, &ptr->vint, &ptr->ozy, &ptr->dolor);
 		previous->next = ptr;
+		ptr->prev = previous;
 		previous = ptr;
 	}
 	ptr->next = nullptr;
+	tail = ptr;
 	cout << "Done!" << endl;
 	fclose(f);
 
